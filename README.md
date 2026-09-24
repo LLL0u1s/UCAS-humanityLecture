@@ -1,6 +1,6 @@
 # UCAS-humanityLecture
 
-用于 UCAS 人文讲座页面的 Tampermonkey 用户脚本。
+用于 UCAS 人文讲座页面绕过与课程时间冲突问题的 Tampermonkey 用户脚本。
 
 ## 功能
 

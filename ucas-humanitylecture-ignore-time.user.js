@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         UCAS 人文讲座忽略时间报名
-// @namespace    https://xkcts.ucas.ac.cn/
-// @version      1.0.0
+// @namespace    https://jwxk.ucas.ac.cn/
+// @version      1.0.1
 // @description  在 UCAS 人文讲座报名按钮旁添加“忽略时间报名”，报名时间改为当天 23:00-23:30，用于绕过与课程时间冲突的限制
 // @author       LLL0u1s
 // @license      MIT
 // @homepageURL  https://github.com/LLL0u1s/UCAS-humanityLecture
 // @supportURL   https://github.com/LLL0u1s/UCAS-humanityLecture/issues
-// @match        https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*
+// @match        https://jwxk.ucas.ac.cn/subject/humanityLecture*
 // @run-at       document-idle
 // @grant        none
 // ==/UserScript==

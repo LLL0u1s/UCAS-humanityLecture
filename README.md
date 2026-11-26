@@ -10,7 +10,7 @@
 
 ### 解决什么问题？
 
-在 UCAS 选课系统的人文讲座页面（`https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*`），当讲座时间与个人课表中的课程时间重叠时，直接点击“报名”会被系统拦截。
+在 UCAS 选课系统的人文讲座页面（`https://jwxk.ucas.ac.cn/subject/humanityLecture*`），当讲座时间与个人课表中的课程时间重叠时，直接点击“报名”会被系统拦截。
 
 本脚本会在每个原有“报名”按钮右侧自动添加一个 **「忽略时间报名」** 按钮：
 - 保留原“报名”按钮不变；
@@ -25,12 +25,12 @@
    - **方式 A（推荐，Greasy Fork 一键安装）**：访问 [Greasy Fork 脚本页](https://greasyfork.org/zh-CN/scripts/607422) 并点击「安装此脚本」。
    - **方式 B（GitHub Raw 直接安装）**：打开 [ucas-humanitylecture-ignore-time.user.js](https://raw.githubusercontent.com/LLL0u1s/UCAS-humanityLecture/main/ucas-humanitylecture-ignore-time.user.js)，脚本管理器会自动弹出安装确认页，点击「安装」即可。
    - **方式 C（手动粘贴）**：复制仓库中 `ucas-humanitylecture-ignore-time.user.js` 的全部内容，在脚本管理器中新建脚本、粘贴并保存。
-3. 登录 UCAS SEP 并进入人文讲座报名页面（`https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*`），即可在原“报名”按钮旁看到 **「忽略时间报名」**。
+3. 登录 UCAS SEP 并进入人文讲座报名页面（`https://jwxk.ucas.ac.cn/subject/humanityLecture*`），即可在原“报名”按钮旁看到 **「忽略时间报名」**。
 
 ### 注意事项与免责声明
 
 - 本脚本**仅修改前端提交的时间字符串**，不会改变讲座实际举办时间，请自行确认讲座时间与签到要求。
-- 仅运行在 `https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*`，无外部网络请求，不收集任何数据（`@grant none`）。
+- 仅运行在 `https://jwxk.ucas.ac.cn/subject/humanityLecture*`，无外部网络请求，不收集任何数据（`@grant none`）。
 - 若教务系统后续将时间冲突校验改为纯后端校验，本脚本可能失效。
 
 ---
@@ -46,7 +46,7 @@
 | Greasy Fork 脚本页（首选安装入口） | `https://greasyfork.org/zh-CN/scripts/607422` |
 | GitHub Raw 脚本直链（备用安装入口） | `https://raw.githubusercontent.com/LLL0u1s/UCAS-humanityLecture/main/ucas-humanitylecture-ignore-time.user.js` |
 | 仓库内脚本文件 | `ucas-humanitylecture-ignore-time.user.js` |
-| 目标生效页面 | `https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*` |
+| 目标生效页面 | `https://jwxk.ucas.ac.cn/subject/humanityLecture*` |
 | 脚本注入成功标志 | 原「报名」按钮右侧出现带 class `ucas-ignore-time-sign` 的「忽略时间报名」按钮 |
 
 ### Step 1：检查或安装脚本管理器
@@ -72,14 +72,14 @@
   2. 打开 Tampermonkey / Violentmonkey 管理面板 → 点击「添加新脚本」→ 全选替换为脚本全文 → 保存（`Ctrl+S` / `Cmd+S`）。
 
 - **方案 4（无扩展时的单次临时生效）**
-  - 若当前环境无法安装浏览器扩展，可在用户已登录的 `https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*` 页面中，指导用户在 DevTools Console 中粘贴并运行 `ucas-humanitylecture-ignore-time.user.js` 内的代码（仅当前页面有效，刷新后需重新执行）。
+  - 若当前环境无法安装浏览器扩展，可在用户已登录的 `https://jwxk.ucas.ac.cn/subject/humanityLecture*` 页面中，指导用户在 DevTools Console 中粘贴并运行 `ucas-humanitylecture-ignore-time.user.js` 内的代码（仅当前页面有效，刷新后需重新执行）。
 
 ### Step 3：验证生效与协助操作
 
-1. 打开 `https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*`。
+1. 打开 `https://jwxk.ucas.ac.cn/subject/humanityLecture*`。
 2. **登录边界**：若页面跳转到 UCAS SEP 登录页或出现验证码，**立即暂停并请用户本人完成登录**，不要索取密码或尝试绕过验证码。
 3. **验证注入**：进入人文讲座列表后，检查每个「报名」按钮右侧是否出现 **「忽略时间报名」** 按钮（或检查 DOM 是否存在 `.ucas-ignore-time-sign`）。
-   - 若未出现：优先排查 ① 扩展是否启用及是否开启「允许用户脚本」；② 脚本在 Tampermonkey 面板中是否为开启状态；③ 当前页面 URL 是否匹配 `https://xkcts.ucas.ac.cn:8443/subject/humanityLecture*`。
+   - 若未出现：优先排查 ① 扩展是否启用及是否开启「允许用户脚本」；② 脚本在 Tampermonkey 面板中是否为开启状态；③ 当前页面 URL 是否匹配 `https://jwxk.ucas.ac.cn/subject/humanityLecture*`。
 4. **执行报名**：仅在用户明确指定讲座名称/时间并授权操作时，点击对应讲座行的「忽略时间报名」按钮，并向用户反馈系统弹窗或报名状态结果。
 
 ---
